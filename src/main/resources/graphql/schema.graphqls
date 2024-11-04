@@ -1,0 +1,27 @@
+type Query{
+	ownerInfo(id:ID):Owner
+	getAllOwner:[Owner]
+	getArtWork(id:ID):ArtWork
+	getAllArtWork:[ArtWork]
+	
+}
+
+type Mutation{
+
+	addOwner(name:String):Owner
+	addArtWork(name:String,createdYear:String,authorId:ID):ArtWork
+
+}
+
+type Owner{
+	id:ID
+	name:String
+}
+
+type ArtWork{
+	id:ID
+	name:String
+	createdYear:String
+	owner:Owner
+
+}
